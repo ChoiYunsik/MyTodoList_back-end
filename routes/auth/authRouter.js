@@ -4,7 +4,7 @@ import { localStrategy, jwtStrategy } from "../../controller/auth/auth.js";
 
 
 const authRouter = express.Router();
-const clientUrl = "https://choiyunsik.github.io/"
+const clientUrl = "https://choiyunsik.github.io"
 // auth
 // passport 라우팅
 authRouter.post("/local", passport.authenticate('local', {session : false}), localStrategy);
