@@ -68,8 +68,9 @@ const deleteTodo = async (req, res) => {
     
 }
  const updateTodoTitle = async (req, res) => {
-    console.log(title)
+    
     const {title} = req.body;
+    console.log(title)
     const updatedTitle = await Todo.updateOne({
         title : title
     })
