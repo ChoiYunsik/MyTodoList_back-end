@@ -33,7 +33,7 @@ const SignIn = () => {
     return (
       <S.Form onSubmit={handleSubmit(async (data) => {
           console.log(data)
-          await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/auth/local", {
+          await fetch("mytodolist:8000/auth/local", {
             method : "POST",
             headers : {
               "Content-Type" : "application/json",
