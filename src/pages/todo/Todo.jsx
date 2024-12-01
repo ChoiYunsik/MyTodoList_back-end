@@ -21,7 +21,7 @@ const Todo = ({todo, isTodoUpdate, setIsTodoUpdate}) => {
     const [isChecked, setIsChecked] = useState(todo.isChecked);
   
     const handleIsChecked = async () => {
-      await fetch("http://localhost:8000/todo/update", {
+      await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/todo/update", {
         method : 'PUT',
         headers : {
           'Content-Type' : 'application/json'
@@ -42,7 +42,7 @@ const Todo = ({todo, isTodoUpdate, setIsTodoUpdate}) => {
     // 투두리스트 삭제
     const handleRemoveTodo = async () => {
         if(window.confirm("Are you sure you want to delete this?")){
-            await fetch("http://localhost:8000/todo/delete", {
+            await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/todo/delete", {
                 method : 'DELETE',
                 headers : {
                   'Content-Type' : 'application/json'
@@ -64,7 +64,7 @@ const Todo = ({todo, isTodoUpdate, setIsTodoUpdate}) => {
     // 수정
     // 타이틀 수정
     const handleUpdateTodo = async () => {
-        await fetch("http://localhost:8000/todo/titleUpdate", {
+        await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/todo/titleUpdate", {
             method : 'PUT',
             headers : {
               'Content-Type' : 'application/json'

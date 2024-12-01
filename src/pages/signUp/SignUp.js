@@ -20,7 +20,7 @@ const SignUp = () => {
   return (
     <S.Form onSubmit={handleSubmit(async (data) => {
       console.log(data)
-        await fetch("http://localhost:8000/user/register", {
+        await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/user/register", {
           method : "POST",
           headers : {
             "Content-Type" : "application/json"

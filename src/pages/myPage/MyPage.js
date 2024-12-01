@@ -44,7 +44,7 @@ const MyPage = () => {
     // 프로필 이미지
     const pictureRef = useRef(null);
     const [selectFile, setSelectFile] = useState(null);
-    const [picturePath, setPicturePath] = useState(`http://localhost:8000${currentUser.picture}`);
+    const [picturePath, setPicturePath] = useState(`https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app${currentUser.picture}`);
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if(file){
@@ -70,12 +70,12 @@ const MyPage = () => {
             body : formData
 
         }
-        await fetch("http://localhost:8000/user/picture", config)
+        await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/user/picture", config)
         .then((res)=> res.json())
         .then((res) => {
             console.log(res)
             const newPicturePath = res.filePath;
-            setPicturePath(`http://localhost:8000${newPicturePath}`)
+            setPicturePath(`https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app${newPicturePath}`)
         })
         .catch()
     }

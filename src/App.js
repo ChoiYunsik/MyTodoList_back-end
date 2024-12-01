@@ -18,7 +18,7 @@ function App() {
 
     if(localStorage.getItem("accessToken")){
       const isAuthenticate = async () => {
-          const response = await fetch("http://localhost:8000/auth/jwt", {
+          const response = await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/auth/jwt", {
             method : "POST",
             headers : {
               'Authorization' : `Bearer ${localStorage.getItem("accessToken")}`

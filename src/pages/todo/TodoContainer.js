@@ -14,7 +14,7 @@ const TodoContainer = () => {
 
     const getTodos = async () => {
         const email = currentUser.email;
-        const response = await fetch(`http://localhost:8000/todo/get?email=${encodeURIComponent(email)}`)
+        const response = await fetch(`https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/todo/get?email=${encodeURIComponent(email)}`)
         const datas = await response.json();
         setTodos(datas)
    

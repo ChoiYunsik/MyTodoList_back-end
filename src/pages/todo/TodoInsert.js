@@ -16,7 +16,7 @@ const TodoInsert = ({isTodoUpdate, setIsTodoUpdate, todos}) => {
           if (!window.confirm("Are you sure you want to add it?")) return;
   
           // Todo 추가 요청
-          await fetch("http://localhost:8000/todo/register", {
+          await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/todo/register", {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json'
