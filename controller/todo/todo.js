@@ -68,29 +68,16 @@ const deleteTodo = async (req, res) => {
     
 }
  const updateTodoTitle = async (req, res) => {
-    const { id, title } = req.body; // `id`와 `title`을 요청 본문에서 추출
-    if (!id || !title) {
-      return res.status(400).json({ message: 'Invalid data' });
-    }
-  
-    try {
-      // 특정 문서를 찾아 업데이트
-      const updatedTitle = await Todo.updateOne(
-        { _id: id }, // 필터 조건 (id로 찾기)
-        { $set: { title } } // 변경할 필드
-      );
-  
-      if (updatedTitle.matchedCount === 0) {
-        return res.status(404).json({ message: 'Todo not found' });
-      }
-  
-      // 업데이트 후 모든 할 일 목록 반환
-      const updatedTodo = await Todo.find();
-      res.status(200).json(updatedTodo);
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Internal server error' });
-    }
+    const {_id, title} = req.body;
+    const updatedTitle = await Todo.updateOne({
+        _id,
+        title : title
+    })
+    const updatedTodo = await Todo.find();
+    res.status(200).json(updatedTodo)
+
+
+
  }
 
 
