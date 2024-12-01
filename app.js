@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 // extended true면 qs모듈을 사용하여 쿼리스트링으로 인식
 app.use(express.urlencoded({extended : false}));
 app.use(cors({
-  origin : "http://localhost:3000",
+  origin : "https://choiyunsik.github.io",
   method : ['GET', 'POST', 'DELETE', 'PUT'],
   credentials : true,
 }))
