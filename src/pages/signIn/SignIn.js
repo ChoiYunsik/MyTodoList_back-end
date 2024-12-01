@@ -33,7 +33,7 @@ const SignIn = () => {
     return (
       <S.Form onSubmit={handleSubmit(async (data) => {
           console.log(data)
-          await fetch("http://localhost:8000/auth/local", {
+          await fetch("https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/auth/local", {
             method : "POST",
             headers : {
               "Content-Type" : "application/json",
@@ -111,10 +111,10 @@ const SignIn = () => {
         <BasicButton size={"full"} shape={"small"} variant={"blue"} color={"white"}>Sign In</BasicButton>
         <div>
           <S.DivGoogle>
-            <a className="googleButton" href='http://localhost:8000/auth/google'><img className="google" src={Google}></img>Google</a>
+            <a className="googleButton" href='https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/auth/google'><img className="google" src={Google}></img>Google</a>
           </S.DivGoogle>
           <S.DivNaver>
-            <a className="naverButton" href='http://localhost:8000/auth/naver'><img className="naver" src={NAVER}></img>NAVER</a>
+            <a className="naverButton" href='https://port-0-mytodolist-m318bp2ybd6633fd.sel4.cloudtype.app/auth/naver'><img className="naver" src={NAVER}></img>NAVER</a>
           </S.DivNaver>
         </div>
       </S.Form>
