@@ -69,11 +69,12 @@ const deleteTodo = async (req, res) => {
 }
  const updateTodoTitle = async (req, res) => {
     
-    const {title, _id} = req.body;
+    const {_id, title} = req.body;
     console.log(title, _id)
-    const updatedTitle = await Todo.updateOne({
-        title : title
-    })
+    const updatedTitle = await Todo.updateOne(
+        {_id : _id},
+        {title : title}
+    )
     const updatedTodo = await Todo.find();
     res.status(200).json(updatedTodo)
 
